@@ -12,12 +12,13 @@ def ingresar_alumno():
         fecha_nacimiento = input("Ingresa la fecha de nacimiento (DIA-MES-AÑO): ")
         try:
          fecha_nacimiento = datetime.datetime.strptime(fecha_nacimiento, "%d-%m-%Y").strftime("%Y-%m-%d")
+         #toma una fecha dd-mm-yyyy la convierte en un objeto de fecha, luego la vuelve a convertir en una cadena de texto forma yyyy-mm-dd
         except ValueError:
-                 print("Formato de fecha incorrecto.")        
+                 print("Formato de fecha incorrecto")        
         telefono = input("Teléfono: ")
         domicilio = input("Domicilio: ")
 
-        cursor.execute(
+        cursor.execute( #c concursor me vinculo con la bd
             "INSERT INTO alumnos (nombre, apellido, documento, fecha_nacimiento, telefono, domicilio) VALUES (%s, %s, %s, %s, %s, %s)",
             (nombre, apellido, documento, fecha_nacimiento, telefono, domicilio)
         )

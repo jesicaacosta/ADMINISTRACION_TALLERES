@@ -12,7 +12,7 @@ def menu():
         print("6: Agregar curso" )
         print("7: Mostrar cursos disponibles")
         print("0: Salir")
-        opcion = input("Seleccione una opción: ")
+        opcion = input("Seleccione una opcion: ")
 
         if opcion == "1":
             ingresar_alumno()
@@ -32,7 +32,7 @@ def menu():
             print("Saliendo del programa...")
             break
         else:
-            print("Opción inválida. Intente de nuevo.")
+            print("Opcion invalida. Intente de nuevo.")
 
 
 print("antes del if!")

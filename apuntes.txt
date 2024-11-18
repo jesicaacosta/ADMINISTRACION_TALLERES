@@ -1,0 +1,15 @@
+El cursor es un objeto que se utiliza para ejecutar consultas SQL y manejar los resultados de esas consultas en tu aplicación Python. 
+Permite interactuar con la base de datos de manera eficiente y flexible.
+
+
+
+----- 
+
+No es necesario entrar a workbench para levantar el servidor, solo lo levanto desde servicios. 
+
+--AÑADIR: 
+
+TKINTER
+TABLA CON CURSOS
+OPCION TABLA DOCENTES
+

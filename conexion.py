@@ -11,6 +11,6 @@ def conectar():
             database="gestion_cursos"
         )
         return conexion
-    except mysql.connector.Error as e:
+    except mysql.connector.Error as e: #si ocurre un error 
         print(f"Error al conectar con la base de datos: {e}")
         return None

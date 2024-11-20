@@ -11,7 +11,7 @@ def menu():
         print("5. Eliminar alumno del registro")
         print("6: Agregar curso" )
         print("7: Mostrar cursos disponibles")
-        print("0: Salir")
+        print("8 para salir")
         opcion = input("Seleccione una opcion: ")
 
         if opcion == "1":

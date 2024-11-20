@@ -33,6 +33,7 @@ def mostrar_alumnos():
         cursor = conexion.cursor()
         cursor.execute("SELECT * FROM alumnos")
         alumnos = cursor.fetchall()
+        print("Alumnos registrados : ")
         for alumno in alumnos:
             print(alumno)
         cursor.close()
@@ -54,12 +55,12 @@ def actualizar_alumno():
     if conexion:
         cursor = conexion.cursor()
         id_alumno = input("ID del alumno a actualizar: ")
-        nombre = input("Nuevo nombre (o dejar vacío): ")
-        apellido = input("Nuevo apellido (o dejar vacío): ")
-        documento = input("Nuevo documento (o dejar vacío): ")
-        fecha_nacimiento = input("Nueva fecha de nacimiento (YYYY-MM-DD, o dejar vacío): ")
-        telefono = input("Nuevo teléfono (o dejar vacío): ")
-        domicilio = input("Nuevo domicilio (o dejar vacío): ")
+        nombre = input("Nuevo nombre (o deja vacío): ")
+        apellido = input("Nuevo apellido (o deja vacío): ")
+        documento = input("Nuevo documento (o deja vacío): ")
+        fecha_nacimiento = input("Nueva fecha de deja (YYYY-MM-DD, o dejalo vacío): ")
+        telefono = input("Nuevo teléfono (o deja vacío): ")
+        domicilio = input("Nuevo domicilio (o deja vacío): ")
 
         campos = []
         valores = []

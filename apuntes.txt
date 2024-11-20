@@ -1,8 +1,6 @@
 El cursor es un objeto que se utiliza para ejecutar consultas SQL y manejar los resultados de esas consultas en tu aplicación Python. 
 Permite interactuar con la base de datos de manera eficiente y flexible.
 
-
-
 ----- 
 
 No es necesario entrar a workbench para levantar el servidor, solo lo levanto desde servicios. 
@@ -13,3 +11,31 @@ TKINTER
 TABLA CON CURSOS
 OPCION TABLA DOCENTES
 
+fetchall obtiene todas las filas de la consulta y las guarda en una lista
+
+cursor.execute(f"UPDATE alumnos SET {', '.join(campos)} WHERE id = %s", valores)
+
+"UPDATE alumnos SET": Esta parte inicia la sentencia SQL, indicando que queremos actualizar la tabla "alumnos".
+"{', '.join(campos)}": Aquí es donde se construye dinámicamente la lista de campos que se van a actualizar.
+
+campos: Es una lista que contiene los nombres de los campos que queremos modificar.
+
+
+
+', '.join(campos): Une los elementos de la lista campos utilizando una coma y un espacio como separador, creando una cadena con los nombres de los campos separados por comas.
+"WHERE id = %s": Esta parte especifica la condición para actualizar los registros. 
+         Solo se actualizarán aquellos registros donde el campo "id" coincida con el valor proporcionado.
+
+%s: Es un marcador de posición para un valor que se insertará más adelante.
+
+
+
+----------- 
+
+datetime proporciona clases y funciones para crear, manipular y formatear objetos de fecha y hora
+
+         date: Representa una fecha sin hora, con atributos como año, mes y día.
+         time: Representa una hora sin fecha, con atributos como hora, minuto, segundo y microsegundo.
+         datetime: Combina ambos, representando una fecha y hora específicas.
+         timedelta: Representa un intervalo de tiempo, es decir, una diferencia entre dos fechas u horas.
+         tzinfo: Clase base para definir zonas horarias.

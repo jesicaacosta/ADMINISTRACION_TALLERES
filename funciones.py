@@ -6,6 +6,7 @@ def ingresar_alumno():
     conexion = conectar() #llamo a la funcion de mysql
     if conexion:
         cursor = conexion.cursor()
+        print(" \n \n✎ INGRESO DE ALUMNO ✎ \n \n")
         nombre = input("Nombre: ")
         apellido = input("Apellido: ")
         documento = input("Documento: ")
@@ -33,10 +34,12 @@ def mostrar_alumnos():
         cursor = conexion.cursor()
         cursor.execute("SELECT * FROM alumnos")
         alumnos = cursor.fetchall()
-        print("Alumnos registrados : ")
+        print(" \n \n✎ ALUMNOS REGISTRADOS ✓ ✎ \n \n")
         for alumno in alumnos:
             print(alumno)
-        cursor.close()
+            print("•\n")
+        cursor.close()        
+        print("\n•••••••••••••••••••\n")
         conexion.close()
 
 def eliminar_alumno():
@@ -46,7 +49,8 @@ def eliminar_alumno():
         id_alumno = input("ID del alumno a eliminar: ")
         cursor.execute("DELETE FROM alumnos WHERE id = %s", (id_alumno,))
         conexion.commit()
-        print("Alumno eliminado.")
+        print("Alumno eliminado del resgitro ✓ ")
+        print("\n•••••••••••••••••••\n")
         cursor.close()
         conexion.close()
 
@@ -58,7 +62,7 @@ def actualizar_alumno():
         nombre = input("Nuevo nombre (o deja vacío): ")
         apellido = input("Nuevo apellido (o deja vacío): ")
         documento = input("Nuevo documento (o deja vacío): ")
-        fecha_nacimiento = input("Nueva fecha de deja (YYYY-MM-DD, o dejalo vacío): ")
+        fecha_nacimiento = input("Nueva fecha de deja (YYYY-MM-DD, o dejar vacío): ")
         telefono = input("Nuevo teléfono (o deja vacío): ")
         domicilio = input("Nuevo domicilio (o deja vacío): ")
 
@@ -86,7 +90,7 @@ def actualizar_alumno():
 
         if campos:
             valores.append(id_alumno)
-            cursor.execute(f"UPDATE alumnos SET {', '.join(campos)} WHERE id = %s", valores)
+            cursor.execute(f"UPDATE alumnos SET {', '.join(campos)} WHERE id = %s", valores) #actualizo los registros en la bd
             conexion.commit()
             print("Alumno actualizado correctamente.")
         else:
@@ -136,7 +140,7 @@ def inscribir_alumno():
         cursor.execute("SELECT id, nombre FROM alumnos") #ESPECIFICAM ID Y NOMBRE 
         alumnos = cursor.fetchall() #fetchall obtiene todas las filas de la consulta y las guarda en una lista
         if alumnos:
-            print("Alumnos disponibles para inscribir:")
+            print("Alumnos disponibles para inscribir a los cursos:")
             for alumno in alumnos: #recorro la lista creada por fetchall
                 print(f"ID: {alumno[0]}, Nombre: {alumno[1]}")
         else:
@@ -145,7 +149,7 @@ def inscribir_alumno():
    
          #mostrar los cursos disponibles
         cursor.execute("SELECT id, nombre_curso FROM cursos") #ESPECIFICAM ID Y NOMBRE 
-        cursos = cursor.fetchall() #fetchall obtiene todas las filas de la consulta y las guarda en una lista
+        cursos = cursor.fetchall() 
 
         # Mostrar solo el ID y nombre de los cursos cargados
         if cursos:
